@@ -131,6 +131,125 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== ORIGINAL CONTENT ===== */}
+      <section className="section">
+        <div className="mx-auto max-w-4xl">
+          <ScrollReveal>
+            <div className="mb-12">
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">Uw slotenmaker voor gans <span className="gradient-text">Oost-Vlaanderen</span></h2>
+              <p className="mb-4 text-lg text-slate-300">
+                Kristof Ponnet uit Wetteren is uw lokale meesterslotenmaker in Oost-Vlaanderen met een snelle en kwalitatieve service. Als slotenmaker in Oost-Vlaanderen zijn we met onze interventiedienst 24/7 bereikbaar om u uit de nood te helpen.
+              </p>
+              <p className="text-lg text-slate-300">
+                Wij zijn <strong className="text-white">dé nummer één</strong> voor het oplossen van slotproblemen in Oost-Vlaanderen en dat allemaal dankzij onze jarenlange ervaring.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={100}>
+            <div className="mb-12">
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">Een slotenmaker met een breed scala aan diensten</h2>
+              <p className="mb-6 text-slate-400">
+                Bij onze slotenmakers klop je aan voor een verscheidenheid aan diensten. We doen hieronder graag uit de doeken waarom net wij dé slotenmaker zijn in Oost-Vlaanderen:
+              </p>
+              <ul className="space-y-6">
+                <li className="flex gap-4 rounded-xl border border-slate-800 bg-[#111827]/50 p-5">
+                  <span className="mt-1 text-2xl">🚨</span>
+                  <div>
+                    <strong className="text-white">24/7-spoedservice:</strong>
+                    <span className="text-slate-400"> problemen doen zich vaak onverwachts voor. Als slotenmaker begrijpen we dat en daarom bieden we een 24/7-spoedservice aan. Zo hoeft u maar één nummer te bellen wanneer u problemen heeft met een (deur)slot of wanneer uw </span>
+                    <Link href="/slot-vervangen-voordeur" className="text-blue-400 hover:text-blue-300">voordeurslot dringend vervangen</Link>
+                    <span className="text-slate-400"> moet worden. Ook zijn we altijd snel ter plaatse om u te helpen.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 rounded-xl border border-slate-800 bg-[#111827]/50 p-5">
+                  <span className="mt-1 text-2xl">🚪</span>
+                  <div>
+                    <strong className="text-white">Openen van deuren:</strong>
+                    <span className="text-slate-400"> heeft u uw (huis)sleutel verloren of heeft u zichzelf buiten gesloten? Geen zorgen, wij als slotenmakers laten u zo weer binnen. Wij kunnen uw deur snel en efficiënt openen. Door gebruik van onze moderne technieken garanderen we bovendien dat er geen schade zal zijn aan uw deur. Ook laat u door ons eenvoudig </span>
+                    <Link href="/sleutel-bijmaken" className="text-blue-400 hover:text-blue-300">een sleutel bijmaken</Link>
+                    <span className="text-slate-400">.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 rounded-xl border border-slate-800 bg-[#111827]/50 p-5">
+                  <span className="mt-1 text-2xl">🔧</span>
+                  <div>
+                    <Link href="/slot-vervangen" className="font-bold text-blue-400 hover:text-blue-300">Vervangen van sloten</Link>
+                    <span className="text-slate-400">: slot defect of sleutel afgebroken? Reken op ons als ervaren slotenmaker! Wij hebben een grote verscheidenheid aan sloten van hoge kwaliteit en zorgen, als professionele slotenmaker, voor een vakkundige installatie.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 rounded-xl border border-slate-800 bg-[#111827]/50 p-5">
+                  <span className="mt-1 text-2xl">🔨</span>
+                  <div>
+                    <Link href="/inbraakschade-herstellen" className="font-bold text-blue-400 hover:text-blue-300">Reparatie van sloten</Link>
+                    <span className="text-slate-400">: Werkt uw slot niet meer zoals het moet waardoor u uw deur niet goed meer open krijgt? Wij herstellen het voor u! Dankzij onze expertise en juiste apparatuur zijn we in staat verschillende slotproblemen op te lossen.</span>
+                  </div>
+                </li>
+                <li className="flex gap-4 rounded-xl border border-slate-800 bg-[#111827]/50 p-5">
+                  <span className="mt-1 text-2xl">🛡️</span>
+                  <div>
+                    <strong className="text-white">Advies en beveiliging:</strong>
+                    <span className="text-slate-400"> bent u het slachtoffer geworden van een inbraak of inbraakpoging of wil u uw woning of handelspand beter gaan beveiligen? Wij staan voor u klaar met de beste beveiligingsoplossingen zoals </span>
+                    <Link href="/inbraakbeveiliging" className="text-blue-400 hover:text-blue-300">onze inbraakpreventiesloten</Link>
+                    <span className="text-slate-400">. Naast advies en inspectie van uw sloten en beveiligingssystemen, leggen we ook uit hoe u uw eigendom beter kan gaan beveiligen.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <div className="mb-12">
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">Als lokale slotenmaker werken wij enkel in <span className="gradient-text">Oost-Vlaanderen</span></h2>
+              <p className="mb-4 text-slate-400">
+                Als u in Oost-Vlaanderen woont, hoeft u niet verder te zoeken voor een betrouwbare en professionele slotenmakerservice. We bieden onze diensten aan in alle steden en gemeenten in de regio Oost-Vlaanderen zoals o.a. <Link href="/slotenmaker/gent" className="text-blue-400 hover:text-blue-300">Gent</Link>, <Link href="/slotenmaker/aalst" className="text-blue-400 hover:text-blue-300">Aalst</Link>, <Link href="/slotenmaker/sint-niklaas" className="text-blue-400 hover:text-blue-300">Sint-Niklaas</Link>, <Link href="/slotenmaker/dendermonde" className="text-blue-400 hover:text-blue-300">Dendermonde</Link>, <Link href="/slotenmaker/eeklo" className="text-blue-400 hover:text-blue-300">Eeklo</Link>, <Link href="/slotenmaker/lokeren" className="text-blue-400 hover:text-blue-300">Lokeren</Link>, … Als u dringend een slotenmaker nodig heeft kan u steeds op ons rekenen.
+              </p>
+              <p className="mb-4 text-slate-400">
+                Slotenmaker Kristof Ponnet en zijn team staan bekend om de hoogwaardige service en deskundigheid op het gebied van sloten. Ons team van professionele experts beschikt over de kennis en jarenlange ervaring om een breed scala aan slotproblemen op te lossen, van eenvoudige sleutelvervangingen of duplicaties tot complexe reparaties en vervangingen van geavanceerde sloten.
+              </p>
+              <p className="text-slate-400">
+                We begrijpen dat uw tijd kostbaar is en dat u uw problemen zo snel mogelijk opgelost wilt hebben. Daarom bieden we een service die 24 uur per dag en 7 dagen per week beschikbaar is. Of u nu midden in de nacht of in het weekend een dringende slotenmaker nodig heeft, wij staan steeds voor u klaar.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="rounded-2xl border border-blue-500/20 bg-blue-500/5 p-8">
+              <h3 className="mb-4 text-2xl font-bold">We hanteren een &ldquo;eerlijke prijsgarantie&rdquo;!</h3>
+              <p className="mb-4 text-slate-400">
+                Dit betekent dat we nooit of te nimmer misbruik zullen maken van de vervelende situatie waarin u zich bevindt als u plots een slotenmaker nodig hebt. Het laatste wat u dan nodig hebt, is een slotenmaker die u nog een beetje oplicht.
+              </p>
+              <p className="text-slate-400">
+                Onze slotenmakers zijn transparant wat betreft de prijzen van de producten, tarieven voor de verschillende diensten en de beschikbaarheid. Voor standaard gevallen kan een slotenmaker in 95% van alle gevallen telefonisch een juiste richtprijs geven. U kan de juiste prijs nog altijd bespreken met de technieker ter plaatse moest er een onverwachte moeilijkheid opduiken.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-[#111827]/80 p-4">
+                  <span className="text-2xl">💰</span>
+                  <div>
+                    <p className="text-sm font-bold text-white">Eerlijke prijzen</p>
+                    <p className="text-xs text-slate-400">Geen verrassingen achteraf</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-[#111827]/80 p-4">
+                  <span className="text-2xl">✅</span>
+                  <div>
+                    <p className="text-sm font-bold text-white">Kwaliteitsvol materiaal</p>
+                    <p className="text-xs text-slate-400">Gecertificeerde producten</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-[#111827]/80 p-4">
+                  <span className="text-2xl">💳</span>
+                  <div>
+                    <p className="text-sm font-bold text-white">Veilig betalen</p>
+                    <p className="text-xs text-slate-400">Bancontact, Visa, Mastercard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ===== SERVICES ===== */}
       <section className="section">
         <div className="mx-auto max-w-7xl">
