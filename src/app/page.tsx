@@ -117,6 +117,57 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== GOOGLE REVIEWS ===== */}
+      <section className="relative z-10 -mt-1 bg-gradient-to-b from-[#0a0e1a] to-[#0f1520] py-10">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="flex flex-col items-center gap-8 lg:flex-row lg:gap-12">
+            {/* Score */}
+            <div className="flex flex-shrink-0 flex-col items-center text-center">
+              <span className="text-lg font-extrabold uppercase tracking-wider text-white">Uitstekend</span>
+              <div className="my-2 flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-6 w-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
+              <span className="text-sm text-slate-400">Gebaseerd op <strong className="text-white">319 recensies</strong></span>
+              <svg className="mt-2 h-7" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><text x="0" y="70" fill="white" fontSize="72" fontFamily="Arial, sans-serif" fontWeight="bold">Google</text></svg>
+            </div>
+
+            {/* Reviews carousel */}
+            <div className="flex flex-1 gap-4 overflow-x-auto pb-2 scrollbar-hide">
+              {[
+                { name: 'Gudrun Evertsz', time: '3 weken geleden', text: 'Mezelf per ongeluk buitengesloten, Kristof heeft dit snel en vakkundig opgelost. Aanrader!', rating: 5 },
+                { name: 'Katrien Ocquet', time: '3 weken geleden', text: 'Correcte en snelle service.', rating: 5 },
+                { name: 'Jurgen Vertongen', time: '3 weken geleden', text: 'Snelle service. Uitgevoerd zonder schade te maken.', rating: 5 },
+                { name: 'Marc De Wilde', time: '1 maand geleden', text: 'Zeer professioneel en vriendelijk. Slot vervangen binnen het uur. Top service!', rating: 5 },
+                { name: 'Sofie Janssens', time: '1 maand geleden', text: 'Kristof was er binnen 20 minuten. Deur schadevrij geopend. Absolute aanrader.', rating: 5 },
+              ].map((review, i) => (
+                <div key={i} className="glass flex min-w-[280px] max-w-[300px] flex-shrink-0 flex-col gap-3 rounded-xl p-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/20 text-sm font-bold text-blue-400">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">{review.name}</p>
+                      <p className="flex items-center gap-1 text-xs text-slate-500">
+                        {review.time}
+                        <svg className="h-3.5 w-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {[...Array(review.rating)].map((_, j) => (
+                      <svg key={j} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    ))}
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-300">&ldquo;{review.text}&rdquo;</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SERVICES ===== */}
       <section className="section">
         <div className="mx-auto max-w-7xl">
