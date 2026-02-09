@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "slot-vervangen",
+    "naam": "Slot Vervangen",
+    "shortDesc": "Defect slot of sleutel afgebroken? Wij vervangen elk type slot vakkundig.",
+    "icon": "🔧"
+  },
+  {
+    "slug": "sleutel-bijmaken",
+    "naam": "Sleutel Bijmaken",
+    "shortDesc": "Sleutel kwijt of extra nodig? Wij maken elke sleutel snel en vakkundig bij.",
+    "icon": "🔑"
+  },
+  {
+    "slug": "inbraakbeveiliging",
+    "naam": "Inbraakbeveiliging",
+    "shortDesc": "Bescherm uw woning of bedrijf met professionele inbraakbeveiliging.",
+    "icon": "🛡️"
+  },
+  {
+    "slug": "raambeveiliging",
+    "naam": "Raambeveiliging",
+    "shortDesc": "Kiepramen en dakramen beveiligen tegen inbraak met ABUS raamsloten.",
+    "icon": "🪟"
+  },
+  {
+    "slug": "deur-openen",
+    "naam": "Deur Openen",
+    "shortDesc": "Buitengesloten? Wij openen uw deur schadevrij, 24/7 beschikbaar.",
+    "icon": "🚪"
+  },
+  {
+    "slug": "inbraakschade-herstellen",
+    "naam": "Inbraakschade Herstellen",
+    "shortDesc": "Slachtoffer van inbraak? Wij herstellen alle schade aan sloten en deuren.",
+    "icon": "🔨"
+  },
+  {
+    "slug": "slot-vervangen-voordeur",
+    "naam": "Voordeurslot Vervangen",
+    "shortDesc": "Uw voordeurslot vakkundig vervangen door een veiligheidscilinder.",
+    "icon": "🏠"
+  }
+]

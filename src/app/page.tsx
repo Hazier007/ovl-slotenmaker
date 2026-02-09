@@ -1,101 +1,128 @@
-import Image from "next/image";
+import Link from 'next/link'
+import diensten from '@/data/diensten.json'
+import bedrijfsinfo from '@/data/bedrijfsinfo.json'
+import locaties from '@/data/locaties.json'
 
-export default function Home() {
+export default function HomePage() {
+  const gemeentes = locaties.filter((l) => !('isDeelgemeente' in l))
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      {/* Hero */}
+      <section className="relative flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a] via-[#111827] to-[#0a0e1a]" />
+        <div className="relative z-10 max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#4668b0]">
+            24/7 Beschikbaar
+          </p>
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+            Slotenmaker voor gans{' '}
+            <span className="text-[#4668b0]">Oost-Vlaanderen</span>
+          </h1>
+          <p className="mb-8 text-lg text-slate-400">
+            Buitengesloten? Slot defect? Inbraakbeveiliging nodig? Kristof
+            PONNET helpt u snel en vakkundig, dag en nacht.
+          </p>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              href={`tel:${bedrijfsinfo.telefoon.replace(/\s/g, '')}`}
+              className="rounded-lg bg-[#4668b0] px-8 py-4 text-lg font-bold text-white transition hover:bg-[#5b7fd4]"
+            >
+              Bel {bedrijfsinfo.telefoon}
+            </a>
+            <Link
+              href="/contact"
+              className="rounded-lg border border-slate-600 px-8 py-4 text-lg font-bold text-white transition hover:border-[#4668b0]"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      </section>
+
+      {/* Diensten */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-12 text-center text-3xl font-bold">Onze Diensten</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {diensten.map((d) => (
+            <div
+              key={d.slug}
+              className="rounded-xl border border-slate-800 bg-[#111827] p-6 transition hover:border-[#4668b0]"
+            >
+              <span className="mb-3 block text-3xl">{d.icon}</span>
+              <h3 className="mb-2 text-xl font-bold">{d.naam}</h3>
+              <p className="text-slate-400">{d.shortDesc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Werkgebied */}
+      <section className="bg-[#111827] px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-6 text-center text-3xl font-bold">
+            Actief in heel Oost-Vlaanderen
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-slate-400">
+            Van Gent tot Aalst, van Sint-Niklaas tot Oudenaarde — wij komen naar
+            u toe. Snel ter plaatse in elke gemeente.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {gemeentes.map((l) => (
+              <Link
+                key={l.slug}
+                href={`/slotenmaker/${l.slug}`}
+                className="rounded-full border border-slate-700 px-3 py-1 text-sm text-slate-300 transition hover:border-[#4668b0] hover:text-white"
+              >
+                {l.naam}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust */}
+      <section className="mx-auto max-w-4xl px-6 py-20 text-center">
+        <h2 className="mb-8 text-3xl font-bold">Waarom kiezen voor ons?</h2>
+        <div className="grid gap-8 sm:grid-cols-3">
+          <div>
+            <p className="mb-2 text-4xl">🏢</p>
+            <h3 className="mb-1 font-bold">Erkend vakman</h3>
+            <p className="text-sm text-slate-400">BTW {bedrijfsinfo.btw}</p>
+          </div>
+          <div>
+            <p className="mb-2 text-4xl">⏰</p>
+            <h3 className="mb-1 font-bold">24/7 Beschikbaar</h3>
+            <p className="text-sm text-slate-400">
+              Dag en nacht, ook in het weekend
+            </p>
+          </div>
+          <div>
+            <p className="mb-2 text-4xl">🔒</p>
+            <h3 className="mb-1 font-bold">Topmerken</h3>
+            <p className="text-sm text-slate-400">
+              {bedrijfsinfo.merken.join(' · ')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#4668b0] px-6 py-16 text-center">
+        <h2 className="mb-4 text-3xl font-bold text-white">
+          Hulp nodig? Bel ons nu!
+        </h2>
+        <p className="mb-6 text-lg text-blue-100">
+          Wij zijn 24/7 bereikbaar voor al uw slotenmaker-diensten in
+          Oost-Vlaanderen.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={`tel:${bedrijfsinfo.telefoon.replace(/\s/g, '')}`}
+          className="inline-block rounded-lg bg-white px-10 py-4 text-xl font-bold text-[#4668b0] transition hover:bg-slate-100"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          {bedrijfsinfo.telefoon}
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+    </main>
+  )
 }
