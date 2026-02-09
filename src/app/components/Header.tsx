@@ -23,19 +23,23 @@ export default function Header() {
           
           {/* Diensten Dropdown */}
           <div className="relative" onMouseEnter={() => setDienstenOpen(true)} onMouseLeave={() => setDienstenOpen(false)}>
-            <button className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-white">
+            <button className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-white" onClick={() => setDienstenOpen(!dienstenOpen)}>
               Diensten
               <svg className={`h-4 w-4 transition ${dienstenOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             {dienstenOpen && (
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-700 bg-[#111827] py-2 shadow-2xl">
-                {diensten.map((d) => (
-                  <Link key={d.slug} href={`/${d.slug}`} className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 no-underline transition hover:bg-slate-800 hover:text-white">
-                    <span>{d.icon}</span>
-                    <span>{d.naam}</span>
-                  </Link>
-                ))}
-              </div>
+              <>
+                {/* Invisible bridge to prevent mouseLeave gap */}
+                <div className="absolute left-0 top-full h-2 w-64" />
+                <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-slate-700 bg-[#111827] py-2 shadow-2xl">
+                  {diensten.map((d) => (
+                    <Link key={d.slug} href={`/${d.slug}`} onClick={() => setDienstenOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 no-underline transition hover:bg-slate-800 hover:text-white">
+                      <span>{d.icon}</span>
+                      <span>{d.naam}</span>
+                    </Link>
+                  ))}
+                </div>
+              </>
             )}
           </div>
 
