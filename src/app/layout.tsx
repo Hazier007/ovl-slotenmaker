@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | Slotenmaker Kristof PONNET',
   },
   description:
-    'Slotenmaker voor gans Oost-Vlaanderen. Slot vervangen, deur openen, inbraakbeveiliging. 24/7 beschikbaar. Bel 0494 44 07 00.',
+    'Slotenmaker voor gans Oost-Vlaanderen. Slot vervangen, deur openen, inbraakbeveiliging. 24/7 beschikbaar. Bel 0468 11 33 99.',
   metadataBase: new URL('https://ovl-slotenmaker.be'),
   openGraph: {
     type: 'website',
